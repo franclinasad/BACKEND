@@ -41,6 +41,24 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+	 <dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-config</artifactId>
+	  <version>6.2.4</version>
+	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-web</artifactId>
+	  <version>6.2.4</version>
+	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>com.gestion.clientes</groupId>
+	  <artifactId>gestion-clientes.backend</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 
 	<build>
