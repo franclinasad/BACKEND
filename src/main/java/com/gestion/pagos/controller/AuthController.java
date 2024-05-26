@@ -30,6 +30,7 @@ public ResponseEntity<?> login(@RequestBody Usuarios loginRequest) {
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Login successful");
             response.put("userId", usuario.getId());
+            response.put("nombre", usuario.getNombre());
             return ResponseEntity.ok(response);
         }
     }
