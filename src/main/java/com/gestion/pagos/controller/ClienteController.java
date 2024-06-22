@@ -77,6 +77,18 @@ public class ClienteController {
     
     }
     
+@PutMapping("/usuarios/{id}/descontarSaldo")
+public ResponseEntity<Usuarios> descontarSaldo(@PathVariable Long id, @RequestBody Map<String, Float> payload) {
+    Float totalPedido = payload.get("totalPedido");
+    Usuarios usuario = usuarioRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado con ID: " + id));
+    
+    usuario.setSaldo(usuario.getSaldo() - totalPedido);
+    Usuarios usuarioActualizado = usuarioRepository.save(usuario);
+    return ResponseEntity.ok(usuarioActualizado);
+}
+
+        
     @DeleteMapping("/usuarios/{id}")
     public ResponseEntity<Map<String,Boolean>> eliminarUsuarios(@PathVariable Long id){
         Usuarios usuario = usuarioRepository.findById(id)
